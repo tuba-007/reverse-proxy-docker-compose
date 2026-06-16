@@ -1,0 +1,2 @@
+# Ignore all files matching a specific extension
+*.env
