@@ -11,7 +11,11 @@ client.connect()
   .catch(err => console.error('connection error', err))
 
 app.get('/', (req, res) => {
-  res.send('app is running and connected to database')
+  res.json({
+    message: 'app is running',
+    pod: process.env.HOSTNAME,
+    timestamp: new Date().toISOString()
+  })
 })
 
 app.listen(3000, () => console.log('App running on port 3000'))
